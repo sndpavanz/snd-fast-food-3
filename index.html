@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SND Fast Food Center - Ravulapalem</title>
-<script></script>
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
 *{
@@ -13,23 +14,34 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+
+}
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:70px;
 }
 
 body{ background:#fffaf2; color:#333; }
 
 header{
-background:linear-gradient(rgba(31,29,29,0.6),rgba(52,42,42,0.6)),
-url('combined2.png');
-background-size:cover;
-background-position:center;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-} 
+    background:linear-gradient(rgba(31,29,29,0.6),rgba(52,42,42,0.6)),
+    url('combined.png');
+
+    background-position:center;
+    background-size:cover;
+    background-repeat:repeat;
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    padding-top:60px; 
+}
 header h1{
 font-size:60px;
 }
@@ -148,6 +160,7 @@ margin-top:40px;
     width:300px;
     min-width:300px;
     background:black;
+     transform:translateX(60px);
 }
 
 .contact-logo img{
@@ -160,6 +173,13 @@ margin-top:40px;
 .contact-info{
     flex:1;
     padding:40px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-end;   /* Moves everything to the right */
+
+    text-align:right;       /* Aligns text to the right */
 }
 
 .contact-info h2{
@@ -175,12 +195,7 @@ margin-top:40px;
 .contact-info h3{
     margin:15px 0;
 }
-.navbar{
-   position:fixed;
-   top:0;
-   width:100%;
-   z-index:1000;
-}
+
 .shop-photo{
     width:100%;
     margin-top:20px;
@@ -194,26 +209,23 @@ margin-top:40px;
     border-radius:15px;
     box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
+@media(max-width:768px){
 
-/* ---------- Mobile Responsive ---------- */
-@media screen and (max-width:768px){
-
-header{
-    height:70vh;
-    padding:20px;
+.hero-content{
+    margin-top:120px;
 }
 
 header h1{
-    font-size:38px;
+    font-size:34px;
 }
 
 header p{
-    font-size:18px;
+    font-size:20px;
 }
 
 .btn{
-    padding:12px 25px;
-    font-size:16px;
+    padding:12px 28px;
+    font-size:17px;
 }
 
 section{
@@ -224,29 +236,11 @@ section{
     font-size:28px;
 }
 
-.cards{
-    grid-template-columns:1fr;
-}
-
-.contact{
-    flex-direction:column;
-    text-align:center;
-}
-
-.contact-logo{
-    width:180px;
-    min-width:180px;
-    margin:20px auto;
-}
-
-.contact-info{
-    padding:20px;
-    text-align:center !important;
-}
 
 .contact-info p{
     font-size:16px;
 }
+
 
 table{
     font-size:14px;
@@ -259,19 +253,7 @@ th,td{
 .shop-photo img{
     width:100%;
 }
-@keyframes fadeUp{
 
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
 
 .card,
 .gallery img,
@@ -281,7 +263,222 @@ transform:translateY(0);
 animation:fadeUp .8s ease;
 
 }
+
+header{
+    height:75vh;
+    padding:0 20px;
+    padding-top:70px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
+
+.hero-content{
+    margin-top:0;
+    padding-top:0;
+}
+
+header h1{
+    font-size:30px;
+}
+
+header p{
+    font-size:16px;
+}
+
+.btn{
+    padding:10px 22px;
+    font-size:15px;
+}
+
+/* Sections */
+section{
+    padding:35px 4%;
+}
+
+.title{
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+/* Cards (2 per row like desktop) */
+.cards{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.card{
+    border-radius:12px;
+}
+
+.card img{
+    height:130px;
+}
+
+.card h3{
+    font-size:15px;
+    padding:10px;
+}
+
+.card p{
+    font-size:13px;
+    padding:0 10px 12px;
+}
+
+/* Gallery */
+.gallery-card{
+    width:150px;
+}
+
+.gallery-card img{
+    height:110px;
+}
+
+/* Contact */
+.contact{
+    flex-direction:column;
+    text-align:center;
+    padding:15px;
+}
+
+.contact-logo{
+    width:120px;
+    min-width:120px;
+    transform:none;
+    margin-left:10px;
+}
+
+.contact-info{
+    padding:10px 15px;
+    align-items:center;
+    text-align:center;
+}
+
+.contact-info h2{
+    font-size:22px;
+}
+
+.contact-info h3{
+    font-size:20px;
+}
+
+.contact-info p{
+    font-size:14px;
+    margin:6px 0;
+}
+
+/* Table */
+table{
+    font-size:13px;
+}
+th,td{
+    padding:8px;
+}
+
+/* Footer */
+/* Mobile Footer - 3 Columns */
+.footer{
+    padding:30px 15px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    align-items:start;
+    text-align:center;
+}
+
+.footer-box{
+    min-width:0;
+}
+
+.footer-box h3{
+    font-size:16px;
+    margin-bottom:10px;
+    color:#ff6b00;
+}
+
+.footer-box p{
+    font-size:11px;
+    margin:5px 0;
+    line-height:1.5;
+}
+
+.footer-box a{
+    font-size:22px;
+    margin:0 5px;
+    color:#fff;
+}
+
+.footer-box a:hover{
+    color:#ff6b00;
+}
+
+.footer hr{
+    margin:20px 0 10px;
+}
+
+.copyright,
+.designer{
+    font-size:11px;
+    text-align:center;
+    line-height:1.5;
+}
+
+.designer strong{
+    color:#ff6b00;
+}
+
+/* Navbar */
+.navbar{
+    height:60px;
+}
+
+.logo img{
+    width:32px;
+}
+
+.logo span{
+   font-size:14px;
+}
+
+.menu-btn{
+    display:block;
+    font-size:24px;
+    display:block !important;
+}
+/* Mobile Navigation */
+.nav-links{
+    position:fixed;
+     top:75px;
+    right:-220px;
+    width:200px;
+    height:auto;
+    padding:15px 0;
+    border-radius:15px;
+
+    background:rgba(15,15,15,.96);
+    backdrop-filter:blur(20px);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+
+    transition:.4s ease;
+    z-index:9999;
+    display:flex;
+}
+
+.nav-links.active{
+    right: 15px;;
+}
+
+}
+
 /* ===========================
    PREMIUM ANIMATIONS
 =========================== */
@@ -351,12 +548,18 @@ animation:fadeUp .8s ease;
     100%{
         transform:translateY(0);
     }
+    
 }
 
 /* HEADER */
 
 header h1{
     animation:fadeDown 1s ease;
+    text-shadow:
+0 0 10px #ff6b00,
+0 0 25px #ff6b00,
+0 0 50px #ff6b00;
+
 }
 
 header p{
@@ -482,34 +685,27 @@ body{
 overflow-x:hidden;
 }
 
-/* Glass Navbar */
-.navbar{
-backdrop-filter:blur(15px);
-background:rgba(0,0,0,.45);
-transition:.4s;
-}
-
 /* Hero Background Zoom */
 header{
 animation:bgZoom 12s infinite alternate;
 }
-
 @keyframes bgZoom{
+
 0%{
 background-size:100%;
 }
+
 100%{
 background-size:110%;
 }
+
+}
+.hero-content{
+    padding-top:0;
 }
 
 /* Text Glow */
-header h1{
-text-shadow:
-0 0 10px #ff6b00,
-0 0 25px #ff6b00,
-0 0 50px #ff6b00;
-}
+
 
 section{
 opacity:0;
@@ -627,20 +823,246 @@ transform:translateX(-1560px);
 }
 
 }
-/* pause on hover (optional) */
 .gallery:hover .track {
   animation-play-state:running;
 }
+/*==========================
+    PREMIUM NAVBAR
+==========================*/
+
+.navbar{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    width:95%;
+    max-width:1300px;
+    height:70px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 30px;
+
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.15);
+
+    z-index:9999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo img{
+    width:45px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#ff6b00;
+}
+
+.menu-btn{
+    display:none;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+}
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:9998;
+}
+
+.overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ================= LOADER ================= */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#111;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:100000;
+
+transition:1s;
+}
+
+.loader-content{
+text-align:center;
+color:white;
+}
+
+.loader-content h2{
+margin-top:20px;
+font-size:35px;
+color:#ff6b00;
+}
+
+.loader-content p{
+margin-top:10px;
+letter-spacing:3px;
+}
+
+.spinner{
+width:80px;
+height:80px;
+
+border:8px solid rgba(255,255,255,.2);
+border-top:8px solid #ff6b00;
+
+border-radius:50%;
+
+animation:spin 1s linear infinite;
+
+margin:auto;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+/* Mobile */
+
+
+/* ===== Premium Footer ===== */
+
+.footer{
+    background:#111;
+    color:#fff;
+    padding:50px 8% 20px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.footer-box{
+    flex:1;
+    min-width:220px;
+}
+
+.footer-box h3{
+    color:#ff6b00;
+    margin-bottom:15px;
+}
+
+.footer-box p{
+    margin:8px 0;
+    color:#ddd;
+}
+
+.footer-box a{
+    color:#fff;
+    font-size:28px;
+    margin-right:15px;
+    transition:.3s;
+}
+
+.footer-box a:hover{
+    color:#ff6b00;
+    transform:translateY(-4px);
+}
+
+.footer hr{
+    margin:30px 0 15px;
+    border:none;
+    height:1px;
+    background:rgba(255,255,255,.15);
+}
+
+.copyright,
+.designer{
+    text-align:center;
+    color:#bbb;
+    margin-top:8px;
+}
+
+.designer strong{
+    color:#ff6b00;
+}
+
+
 </style>
 
 </head>
 
 <body>
 
+<!-- Loading Screen -->
+<div id="loader">
+    <div class="loader-content">
+        <div class="spinner"></div>
+        <h2>SND Fast Food Center</h2>
+        <p>Loading...</p>
+    </div>
+</div>
+<div class="overlay"></div>
+<nav class="navbar">
+
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <span>SND Fast Food Center</span>
+    </div>
+
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#">🏠 Home</a></li>
+        <li><a href="#menu">🍽 Menu</a></li>
+        <li><a href="#gallery">🖼 Gallery</a></li>
+        <li><a href="#contact">📞 Contact</a></li>
+        <li><a href="#location">📍 Location</a></li>
+    </ul>
+
+</nav>
 
 <header>
 
-<div>
+<div class="hero-content">
 <h1> SND Fast Food Center</h1>
 <p>Ravulapalem</p>
 <a href="#menu" class="btn">View Menu</a>
@@ -649,44 +1071,44 @@ transform:translateX(-1560px);
 </header>
 
 
-<section>
+<section id="special">
 
 <h2 class="title">Our Special Items</h2>
 
 <div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" loading="lazy">
 <h3>🍗 Chicken Fried Rice</h3>
 <p>Half ₹80 | Full ₹120</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" loading="lazy">
 <h3>🥚 Egg Fried Rice</h3>
 <p>Half ₹60 | ₹Full 80</p>
 </div>
 
 <div class="card">
-<img src="friedrice.png">
+<img src="friedrice.png" loading="lazy">
 <h3>🥬 Veg Fried Rice</h3>
 <p>Half ₹60 | Full ₹80</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80" loading="lazy">
 <h3>🍜 Chicken Noodles</h3>
 <p>Half ₹80 | Full ₹120</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=800&q=80" loading="lazy">
 <h3>🥚 Egg Noodles</h3>
 <p>Half ₹60 | Full ₹80</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" loading="lazy">
 <h3>🥬 Veg Noodles</h3>
 <p>Half ₹60 | Full ₹80</p>
 </div>
@@ -745,47 +1167,48 @@ transform:translateX(-1560px);
 
 </section>
 
-<section>
+<section id="gallery">
+
 
 <h2 class="title">Food Gallery</h2>
 
 <div class="gallery">
     <div class="track">
 
-        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80">   
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" loading="lazy">   
             
             </div>
 
-        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80">
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" loading="lazy">
            
             </div>
-        <div class="gallery-card"><img src="friedrice.png">
+        <div class="gallery-card"><img src="friedrice.png" loading="lazy">
             
             </div>
-        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80"></div>
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80" loading="lazy"></div>
         
-        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=800&q=80">
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=800&q=80" loading="lazy">
        
     </div>   
-    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80">
+    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" loading="lazy">
     
     </div>
-        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80">   
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" loading="lazy">   
             
         </div>
-        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80">
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" loading="lazy">
        
         </div>
-        <div class="gallery-card"><img src="friedrice.png">
+        <div class="gallery-card"><img src="friedrice.png" loading="lazy">
             
          </div>   
-        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80">
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80" loading="lazy">
        
         </div>
-    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=800&q=80">
+    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=800&q=80" loading="lazy">
         
     </div>
-    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80">
+    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" loading="lazy">
    
     </div>
     </div>
@@ -793,15 +1216,15 @@ transform:translateX(-1560px);
 
 </section>
 
-<section>
+<section id="contact">
 
 <div class="contact">
 
     <div class="contact-logo">
-        <img src="logo.png" alt="SND Logo">
+        <img src="logo.png" loading="lazy" alt="SND Logo">
     </div>
 
-    <div class="contact-info" align="right">
+    <div class="contact-info">
         <h2>SND Fast Food Center</h2>
         <p>📍 beside Sri Krishna Residency</p>
         <p>📍 RAVULAPALEM</p>
@@ -819,18 +1242,61 @@ transform:translateX(-1560px);
     <h2 class="title">Our Location</h2>
 
  <div class="shop-photo">
-        <img src="address.jpeg" alt="SND Fast Food Center">
+        <img src="address.jpeg" loading="lazy" alt="SND Fast Food Center">
     </div>
 
 </section>
-<footer>
+<footer class="footer">
 
-© 2026 SND Fast Food Center | Ravulapalem
+    <div class="footer-container">
+
+        <!-- Restaurant Info -->
+        <div class="footer-box">
+            <h3>SND Fast Food Center</h3>
+            <p>Fresh • Tasty • Hygienic</p>
+            <p>📍 Ravulapalem</p>
+            <p>📞 +91 96667 48888</p>
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="footer-box">
+            <h3>Opening Hours</h3>
+            <p>Tuesday - Sunday</p>
+            <p>06:00 PM - 11:00 PM</p>
+            <p>Closed on Mondays</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="https://wa.me/919666748888" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 SND Fast Food Center | All Rights Reserved
+    </p>
+
+    <p class="designer">
+        Designed & Developed by <strong>Ashik</strong>
+    </p>
 
 </footer>
 
-</body>
-</html>
 <script>
 
 const observer=new IntersectionObserver((entries)=>{
@@ -852,5 +1318,83 @@ document.querySelectorAll("section").forEach(sec=>{
 observer.observe(sec);
 
 });
+// Loading Screen
 
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+document.getElementById("loader").style.opacity="0";
+
+setTimeout(function(){
+
+document.getElementById("loader").style.display="none";
+
+},1000);
+
+},1800);
+
+});
+
+
+
+window.addEventListener("scroll", () => {
+
+    const nav = document.querySelector(".navbar");
+
+    if(window.scrollY > 30){
+
+        nav.style.background="rgba(15,15,15,.75)";
+        nav.style.backdropFilter="blur(20px)";
+        nav.style.boxShadow="0 10px 35px rgba(0,0,0,.35)";
+
+    }else{
+
+        nav.style.background="rgba(0,0,0,.45)";
+        nav.style.backdropFilter="blur(20px)";
+        nav.style.boxShadow="none";
+
+    }
+
+});
+
+const menuBtn=document.querySelector(".menu-btn");
+const navLinks=document.querySelector(".nav-links");
+const icon=document.querySelector(".menu-btn i");
+const overlay=document.querySelector(".overlay");
+
+menuBtn.onclick=()=>{
+
+    navLinks.classList.toggle("active");
+    overlay.classList.toggle("show");
+
+    if(navLinks.classList.contains("active")){
+        icon.classList.replace("fa-bars","fa-times");
+    }else{
+        icon.classList.replace("fa-times","fa-bars");
+    }
+
+}
+
+overlay.onclick=()=>{
+
+    navLinks.classList.remove("active");
+    overlay.classList.remove("show");
+    icon.classList.replace("fa-times","fa-bars");
+
+}
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.onclick=()=>{
+
+        navLinks.classList.remove("active");
+        overlay.classList.remove("show");
+        icon.classList.replace("fa-times","fa-bars");
+
+    }
+
+});
 </script>
+</body>
+</html>
